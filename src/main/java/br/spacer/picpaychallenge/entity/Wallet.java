@@ -1,6 +1,5 @@
 package br.spacer.picpaychallenge.entity;
 
-import br.spacer.picpaychallenge.exception.PicPayException;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

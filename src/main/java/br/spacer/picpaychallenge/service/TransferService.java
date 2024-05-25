@@ -4,7 +4,6 @@ import br.spacer.picpaychallenge.dto.TransferDto;
 import br.spacer.picpaychallenge.entity.Transfer;
 import br.spacer.picpaychallenge.entity.Wallet;
 import br.spacer.picpaychallenge.exception.InsufficientBalanceException;
-import br.spacer.picpaychallenge.exception.PicPayException;
 import br.spacer.picpaychallenge.exception.TransferNotAuthorizedException;
 import br.spacer.picpaychallenge.exception.TransferNowAllowedException;
 import br.spacer.picpaychallenge.repository.TransferRepository;
@@ -54,7 +53,8 @@ public class TransferService {
         if (!sender.isTransferAllowedForWalletType()) {
             throw new TransferNowAllowedException();
         }
-        if (!sender.isBalanceEqualOrGreatherThan(transferDto.value())) {
+
+        if (sender.isBalanceEqualOrGreatherThan(transferDto.value())) {
             throw new InsufficientBalanceException();
         }
 
