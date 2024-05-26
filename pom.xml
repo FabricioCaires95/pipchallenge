@@ -52,7 +52,7 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
-                <anEnum>pom</anEnum>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
