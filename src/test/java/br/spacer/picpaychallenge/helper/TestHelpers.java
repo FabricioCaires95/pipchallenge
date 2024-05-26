@@ -15,9 +15,6 @@ public final class TestHelpers {
     public static final String PASSWORD = "123456";
     public static final WalletType ENUM_USER = WalletType.Enum.USER.get();
     public static final WalletType.Enum ENUM_TYPE_USER = WalletType.Enum.USER;
-    public static final WalletType ENUM_MERCHANT = WalletType.Enum.MERCHANT.get();
-    public static final BigDecimal VALUE = BigDecimal.valueOf(20);
-    public static final BigDecimal BALANCE = BigDecimal.valueOf(80);
 
     public static final Long PAYER_ID = 2L;
     public static final Long PAYEE_ID = 3L;

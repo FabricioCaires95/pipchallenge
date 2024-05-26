@@ -61,7 +61,7 @@ public class Wallet {
     }
 
     public boolean isBalanceEqualOrGreatherThan(BigDecimal value) {
-        return value.doubleValue() >= this.balance.doubleValue();
+        return this.balance.doubleValue() >= value.doubleValue();
     }
 
     public Long getId() {

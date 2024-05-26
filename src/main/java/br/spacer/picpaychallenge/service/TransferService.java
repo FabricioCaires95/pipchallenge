@@ -54,7 +54,7 @@ public class TransferService {
             throw new TransferNowAllowedException();
         }
 
-        if (sender.isBalanceEqualOrGreatherThan(transferDto.value())) {
+        if (!sender.isBalanceEqualOrGreatherThan(transferDto.value())) {
             throw new InsufficientBalanceException();
         }
 
