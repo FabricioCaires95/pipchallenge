@@ -4,6 +4,7 @@ import br.spacer.picpaychallenge.entity.Wallet;
 import br.spacer.picpaychallenge.entity.WalletType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public record CreateWalletDto(@NotBlank(message = "Full name is required") String fullName,
                               @NotBlank(message = "Must not be blank" ) String cpfCnpj,
@@ -12,6 +13,7 @@ public record CreateWalletDto(@NotBlank(message = "Full name is required") Strin
                               @NotNull(message = "Wallet type is required") WalletType.Enum walletType) {
 
     public Wallet toWallet() {
-        return new Wallet(fullName, cpfCnpj, email, password, walletType.get());
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return new Wallet(fullName, cpfCnpj, email, passwordEncoder.encode(password), walletType.get());
     }
 }
